@@ -17,10 +17,7 @@ namespace VxFormGenerator.Core.Layout
             // TODO: EXPANDO SWITCH
             var allProperties = VxHelpers.GetModelProperties(model.GetType());
 
-            var rootFormDefinition = model.GetType().GetCustomAttribute<VxFormDefinition>();
-
-            if (rootFormDefinition == null)
-                rootFormDefinition = VxFormDefinition.Create();
+            var rootFormDefinition = model.GetType().GetCustomAttribute<VxFormDefinition>() ?? VxFormDefinition.Create();
 
             var defaultGroup = VxFormGroup.Create();
 

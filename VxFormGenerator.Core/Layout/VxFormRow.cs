@@ -55,7 +55,7 @@ namespace VxFormGenerator.Core.Layout
 
 
             if (options.ShowPlaceholder == PlaceholderPolicy.EXPLICIT_LABEL_FALLBACK)
-                layoutAttr.Placeholder = layoutAttr.Placeholder != null ? layoutAttr.Placeholder : layoutAttr.Label;
+                layoutAttr.Placeholder ??= layoutAttr.Label;
             else if (
                 (options.ShowPlaceholder == PlaceholderPolicy.IMPLICIT || options.ShowPlaceholder == PlaceholderPolicy.IMPLICIT_LABEL_FALLBACK)
                 && foundRow.Columns.Count > 1)

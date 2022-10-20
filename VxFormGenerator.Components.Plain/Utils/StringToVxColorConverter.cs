@@ -20,9 +20,7 @@ namespace VxFormGenerator.Components.Plain.Utils
 
         public override object ConvertFrom(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value)
         {
-            string stringValue = value as string;
-
-            if (stringValue != null)
+            if (value is string stringValue)
             {
                 return new VxColor(stringValue);
             }

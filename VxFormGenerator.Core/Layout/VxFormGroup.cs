@@ -60,11 +60,10 @@ namespace VxFormGenerator.Core.Layout
             var allRowLayoutAttributes = VxHelpers.GetAllAttributes<VxFormRowLayoutAttribute>(prop.DeclaringType);
 
             // If no attribute is found use the name of the property
-            if (layoutAttr == null)
-                layoutAttr = new VxFormElementLayoutAttribute()
-                {
-                    Label = GetLabel(fieldIdentifier, modelInstance)
-                };
+            layoutAttr ??= new VxFormElementLayoutAttribute()
+            {
+                Label = GetLabel(fieldIdentifier, modelInstance)
+            };
 
             PatchLayoutWithBuiltInAttributes(layoutAttr, prop);
 
@@ -93,11 +92,9 @@ namespace VxFormGenerator.Core.Layout
         /// <param name="prop">Property for reflection purpouses</param>
         private static void PatchLayoutWithBuiltInAttributes(VxFormElementLayoutAttribute layoutAttr, PropertyInfo prop)
         {
-            var displayAttribute = prop
-                   .GetCustomAttributes(typeof(DisplayAttribute), false)
-                   .FirstOrDefault() as DisplayAttribute;
-
-            if (displayAttribute != null)
+            if (prop
+                    .GetCustomAttributes(typeof(DisplayAttribute), false)
+                    .FirstOrDefault() is DisplayAttribute displayAttribute)
             {
                 layoutAttr.Label = displayAttribute.GetName();
                 layoutAttr.Order = displayAttribute.GetOrder().GetValueOrDefault();
@@ -118,11 +115,9 @@ namespace VxFormGenerator.Core.Layout
                 .GetType()
                 .GetProperty(fieldIdentifier);
 
-                var displayAttribute = prop
+                return prop
                     .GetCustomAttributes(typeof(DisplayAttribute), false)
-                    .FirstOrDefault() as DisplayAttribute;
-
-                return displayAttribute != null ? displayAttribute.Name : fieldIdentifier;
+                    .FirstOrDefault() is DisplayAttribute displayAttribute ? displayAttribute.Name : fieldIdentifier;
             }
 
         }

@@ -76,10 +76,8 @@ namespace VxFormGenerator.Core
 
                 CascadedEditContext.SetFieldCssClassProvider(provider);
             }
-            if (FormLayoutOptions == null)
-            {
-                FormLayoutOptions = (VxFormLayoutOptions)ScopedServices.GetService(typeof(Layout.VxFormLayoutOptions));
-            }
+
+            FormLayoutOptions ??= (VxFormLayoutOptions) ScopedServices.GetService(typeof(Layout.VxFormLayoutOptions));
         }
 
 

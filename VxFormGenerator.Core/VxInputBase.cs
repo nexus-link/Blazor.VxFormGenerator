@@ -10,12 +10,9 @@ namespace VxFormGenerator.Core
     /// <typeparam name="TValue"></typeparam>
     public abstract class VxInputBase<TValue> : InputBase<TValue>
     {
-        private string _id = Guid.NewGuid().ToString();
-
         /// <summary>
         /// The html id attribute that could be used for the element
         /// </summary>
-        [Parameter] public string Id { get => _id; set => _id = value; }
-
+        [Parameter] public string Id { get; set; } = Guid.NewGuid().ToString();
     }
 }

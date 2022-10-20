@@ -42,10 +42,7 @@ namespace VxFormGenerator.Core
         {
             Type foundInterface = type
                 .GetInterfaces()
-                .Where(i =>
-                {
-                    return i.Name == typeToImplement.Name;
-                })
+                .Where(i => i.Name == typeToImplement.Name)
                 .Select(i => i)
                 .FirstOrDefault();
 

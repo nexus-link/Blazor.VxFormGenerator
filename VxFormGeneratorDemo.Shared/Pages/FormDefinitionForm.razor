@@ -13,7 +13,7 @@
     </div>
     <div class="card-body">
 
-        <EditForm Model="Options"
+        <EditForm Model="_options"
                   OnSubmit="ChangeLayoutOptions">
             <VxFormGenerator.Core.Validation.ObjectGraphDataAnnotationsValidator />
             <RenderFormElements></RenderFormElements>
@@ -30,7 +30,7 @@
     </div>
     <div class="card-body">
 
-        <EditForm Model="Model"
+        <EditForm Model="_model"
                   OnValidSubmit="HandleValidSubmit"
                   OnInvalidSubmit="HandleInValidSubmit">
             <VxFormGenerator.Core.Validation.ObjectGraphDataAnnotationsValidator />
