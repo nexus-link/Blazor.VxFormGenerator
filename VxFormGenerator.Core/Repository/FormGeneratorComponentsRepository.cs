@@ -38,7 +38,7 @@ namespace VxFormGenerator.Core.Repository
 
         protected virtual Type GetComponent(TKey key)
         {
-            var found = ComponentDict.TryGetValue(key, out Type outVar);
+            var found = ComponentDict.TryGetValue(key, out var outVar);
 
             return found ? outVar : DefaultComponent;
         }

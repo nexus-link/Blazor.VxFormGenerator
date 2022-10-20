@@ -40,7 +40,7 @@ namespace VxFormGenerator.Core
 
         internal static bool TypeImplementsInterface(Type type, Type typeToImplement)
         {
-            Type foundInterface = type
+            var foundInterface = type
                 .GetInterfaces()
                 .Where(i => i.Name == typeToImplement.Name)
                 .Select(i => i)

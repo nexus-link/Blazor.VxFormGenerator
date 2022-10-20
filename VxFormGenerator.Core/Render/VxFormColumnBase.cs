@@ -37,7 +37,7 @@ namespace VxFormGenerator.Core.Render
                 if (FormLayoutOptions.LabelOrientation == LabelOrientation.LEFT && FormColumnDefinition.RenderOptions.ColSpan > 0)
                 {
                     var colspan = Math.Round(FormColumnDefinition.RenderOptions.ColSpan * (100.0 - 25.0) / 12.0);
-                    string colspanS = colspan.ToString(CultureInfo.InvariantCulture);
+                    var colspanS = colspan.ToString(CultureInfo.InvariantCulture);
                     return $"flex: 0 0 {colspanS}%; max-width: {colspanS}";
                 }
                 return "";
@@ -47,7 +47,7 @@ namespace VxFormGenerator.Core.Render
 
         public RenderFragment CreateFormElement() => builder =>
         {
-            if (FormColumnDefinition.Model.GetType() == typeof(ExpandoObject))
+            if (FormColumnDefinition.Model is ExpandoObject)
             {
                 // Accesing a ExpandoObject requires to cast the model as a dictionary, so it's accesable by a key of type string
                 var accessor = ((IDictionary<string, object>)FormColumnDefinition.Model);
@@ -58,8 +58,8 @@ namespace VxFormGenerator.Core.Render
                     var value = accessor[key];
 
                     // Get the generic CreateFormComponent and set the property type of the model and the elementType that is rendered
-                    MethodInfo method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferenceExpando), BindingFlags.NonPublic | BindingFlags.Instance);
-                    MethodInfo genericMethod = method.MakeGenericMethod(value.GetType());
+                    var method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferenceExpando), BindingFlags.NonPublic | BindingFlags.Instance);
+                    var genericMethod = method.MakeGenericMethod(value.GetType());
                     // Execute the method with the following parameters
                     genericMethod.Invoke(this, new object[] { accessor, key, builder, FormColumnDefinition });
                 }
@@ -68,8 +68,8 @@ namespace VxFormGenerator.Core.Render
             {
                 var propertyFormElement = FormColumnDefinition.Model.GetType().GetProperty(FormColumnDefinition.Name);
                 // Get the generic CreateFormComponent and set the property type of the model and the elementType that is rendered
-                MethodInfo method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferencePoco), BindingFlags.NonPublic | BindingFlags.Instance);
-                MethodInfo genericMethod = method.MakeGenericMethod(propertyFormElement.PropertyType);
+                var method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferencePoco), BindingFlags.NonPublic | BindingFlags.Instance);
+                var genericMethod = method.MakeGenericMethod(propertyFormElement.PropertyType);
                 // Execute the method with the following parameters
                 genericMethod.Invoke(this, new object[] { FormColumnDefinition.Model, propertyFormElement, builder, FormColumnDefinition });
             }

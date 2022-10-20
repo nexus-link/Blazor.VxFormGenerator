@@ -40,9 +40,9 @@ namespace VxFormGenerator.Components.Plain.Utils
         {
             if (destinationType == typeof(InstanceDescriptor) && value is VxColor)
             {
-                VxColor obj = value as VxColor;
+                var obj = value as VxColor;
 
-                ConstructorInfo ctor = typeof(VxColor).GetConstructor(new Type[] { typeof(string) });
+                var ctor = typeof(VxColor).GetConstructor(new Type[] { typeof(string) });
 
                 if (ctor != null)
                 {

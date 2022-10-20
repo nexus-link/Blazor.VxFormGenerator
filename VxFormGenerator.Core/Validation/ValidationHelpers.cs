@@ -15,7 +15,7 @@ namespace VxFormGenerator.Core.Validation
 
             // The invalid string shall always be fixed up, as we can never get it until the
             // element has checked at least once by an attempted submit.
-            string result = inputClassNames.Replace(" invalid", " is-invalid");
+            var result = inputClassNames.Replace(" invalid", " is-invalid");
 
             // The valid tag is on by default, and to keep consistancy with BS4 we only want
             // it to appear either when our field is modified, or we've tried a submit
