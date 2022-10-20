@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Version>0.4.0</Version>
     <Authors>Alex Knijf</Authors>
     <Company>Codershop</Company>
@@ -17,8 +17,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,10 +26,7 @@
 		  <Pack>True</Pack>
 		  <PackagePath></PackagePath>
 	  </None>
-	  <Content Include="..\LICENSE.txt"
-			  Link="LICENSE.txt"
-			  Pack="true"
-			  PackagePath="LICENSE.txt"/>
+	  <Content Include="..\LICENSE.txt" Link="LICENSE.txt" Pack="true" PackagePath="LICENSE.txt" />
   </ItemGroup>
 
   <ItemGroup>
