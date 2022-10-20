@@ -75,7 +75,7 @@ namespace VxFormGenerator.Core.Layout
             if (foundRow == null)
             {
                 foundRow = VxFormRow.Create(layoutAttr, allRowLayoutAttributes.Find(x => x.Id == layoutAttr.RowId), options);
-                group.Rows.Add(foundRow); ;
+                group.Rows.Add(foundRow);
             }
 
             var formColumn = VxFormElementDefinition.Create(fieldIdentifier, layoutAttr, modelInstance, options);

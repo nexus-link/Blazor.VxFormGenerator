@@ -271,7 +271,7 @@ namespace VxFormGenerator.Core.Tests.Validation
         private class Level1Validation
         {
             [ValidateComplexType]
-            public Level2Validation Level2 { get; set; }
+            public Level2Validation Level2 { get; init; }
         }
 
         public class Level2Validation
@@ -309,7 +309,7 @@ namespace VxFormGenerator.Core.Tests.Validation
         private class Person
         {
             [Required]
-            public string Name { get; set; }
+            public string Name { get; init; }
 
             [ValidateComplexType]
             public Person Related { get; set; }
@@ -365,7 +365,7 @@ namespace VxFormGenerator.Core.Tests.Validation
         private class Node
         {
             [Required]
-            public string Id { get; set; }
+            public string Id { get; init; }
 
             [ValidateComplexType]
             public List<Node> Related { get; } = new List<Node>();
