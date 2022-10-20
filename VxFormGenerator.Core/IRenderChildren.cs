@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Reflection;
 
 namespace VxFormGenerator.Core
 {

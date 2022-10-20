@@ -1,12 +1,11 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using VxFormGenerator.Core;
 
 namespace VxFormGenerator.Components.Plain.Components
 {
-    public class VxInputCheckbox : VxInputBase<bool>, IDisposable
+    public class VxInputCheckbox : VxInputBase<bool>
     {
         [Parameter] public string Label { get; set; }
         [Parameter] public string LabelCss { get; set; }
@@ -18,7 +17,7 @@ namespace VxFormGenerator.Components.Plain.Components
 
             builder.OpenElement(index, "div");
             builder.AddAttribute(index++, "class", ContainerCss);
-            builder.AddContent(index++, new RenderFragment(builder =>
+            builder.AddContent(index++, builder =>
             {
                 var index2 = 0;
                 builder.OpenElement(index2++, "input");
@@ -35,7 +34,7 @@ namespace VxFormGenerator.Components.Plain.Components
                 builder.AddAttribute(index2++, "for", Id);
                 builder.AddContent(index2++, Label);
                 builder.CloseElement();
-            }));
+            });
 
             builder.CloseElement();
         }

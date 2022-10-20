@@ -1,11 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Dynamic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using VxFormGenerator.Core.Layout;
@@ -47,7 +42,7 @@ namespace VxFormGenerator.Core
         /// The current Value of the <see cref="FormElementBase{TFormElement}"/>
         /// </summary>
         [Parameter] public TFormElement Value { get; set; }
-        [Parameter] public Layout.VxFormElementDefinition FormColumnDefinition { get; set; }
+        [Parameter] public VxFormElementDefinition FormColumnDefinition { get; set; }
 
         /// <summary>
         /// Get the <see cref="EditForm.EditContext"/> instance. This instance will be used to fill out the values inputted by the user
@@ -93,7 +88,7 @@ namespace VxFormGenerator.Core
             /*   // Activate the the Type so that the methods can be called
                var instance = Activator.CreateInstance(elementType);*/
 
-            this.CreateFormComponent(this, FormColumnDefinition.Model, FormColumnDefinition.Name, builder, elementType);
+            CreateFormComponent(this, FormColumnDefinition.Model, FormColumnDefinition.Name, builder, elementType);
         };
 
 
@@ -148,7 +143,7 @@ namespace VxFormGenerator.Core
             {
                 var method = elementType.GetMethod(nameof(IRenderChildren.RenderChildren), BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Static);
 
-                method.Invoke(null, new object[] { builder, indexBuilder, dataContext, fieldIdentifier });
+                method.Invoke(null, new[] { builder, indexBuilder, dataContext, fieldIdentifier });
             }
         }
 

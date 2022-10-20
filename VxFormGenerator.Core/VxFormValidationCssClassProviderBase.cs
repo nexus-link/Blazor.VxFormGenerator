@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using VxFormGenerator.Core.Layout;
 
 namespace VxFormGenerator.Core

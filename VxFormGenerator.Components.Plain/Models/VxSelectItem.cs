@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using VxFormGenerator.Core;
 
 namespace VxFormGenerator.Components.Plain.Models
@@ -16,10 +11,10 @@ namespace VxFormGenerator.Components.Plain.Models
         }
         public VxSelectItem(DisplayAttribute displayAttribute, Enum value)
         {
-            this.Order = displayAttribute.GetOrder() ?? 0;
-            this.Label = displayAttribute.GetName();
-            this.Key = value.ToString();
-            this.Description = displayAttribute.GetDescription();
+            Order = displayAttribute.GetOrder() ?? 0;
+            Label = displayAttribute.GetName();
+            Key = value.ToString();
+            Description = displayAttribute.GetDescription();
         }
 
 

@@ -1,8 +1,4 @@
-﻿
-using System;
-using System.Reflection;
-
-namespace VxFormGenerator.Core.Layout
+﻿namespace VxFormGenerator.Core.Layout
 {
     public class VxFormElementDefinition
     {

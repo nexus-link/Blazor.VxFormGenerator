@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace VxFormGenerator.Core.Layout
 {
@@ -42,11 +38,11 @@ namespace VxFormGenerator.Core.Layout
 
             var allProperties = VxHelpers.GetModelProperties(typeToCheck);
 
-            var rootGroup = VxFormGroup.Create();
+            var rootGroup = Create();
 
             foreach (var prop in allProperties)
             {
-                VxFormGroup.Add(prop.Name, rootGroup, modelInstance, options);
+                Add(prop.Name, rootGroup, modelInstance, options);
             }
 
             return rootGroup;

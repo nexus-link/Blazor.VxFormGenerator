@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+﻿using System.Reflection;
 
 namespace VxFormGenerator.Core.Layout
 {
@@ -17,7 +13,7 @@ namespace VxFormGenerator.Core.Layout
             // TODO: EXPANDO SWITCH
             var allProperties = VxHelpers.GetModelProperties(model.GetType());
 
-            var rootFormDefinition = model.GetType().GetCustomAttribute<VxFormDefinition>() ?? VxFormDefinition.Create();
+            var rootFormDefinition = model.GetType().GetCustomAttribute<VxFormDefinition>() ?? Create();
 
             var defaultGroup = VxFormGroup.Create();
 

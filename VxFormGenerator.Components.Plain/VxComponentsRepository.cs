@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Components.Forms;
+﻿using Microsoft.AspNetCore.Components.Forms;
 using VxFormGenerator.Components.Plain.Components;
 using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core;
@@ -22,7 +20,7 @@ namespace VxFormGenerator.Components.Plain
                         {typeof(Enum),              typeof(InputSelectWithOptions<>) },
                         {typeof(ValueReferences),   typeof(InputCheckboxMultiple<>) },
                         {typeof(decimal),           typeof(InputNumber<>) },
-                        { typeof(System.Single),    typeof(InputNumber<>) },
+                        { typeof(Single),    typeof(InputNumber<>) },
                         {typeof(VxColor),           typeof(InputColor) }
                   };
             DefaultComponent = null;

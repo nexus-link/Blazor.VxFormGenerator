@@ -13,7 +13,7 @@ namespace VxFormGenerator.Components.Plain.Models
 
         public VxColor(string value)
         {
-            this.Value = value;
+            Value = value;
         }
     }
 }

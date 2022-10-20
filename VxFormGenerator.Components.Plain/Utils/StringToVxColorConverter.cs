@@ -1,7 +1,5 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.Design.Serialization;
-using System.Reflection;
 using VxFormGenerator.Components.Plain.Models;
 
 namespace VxFormGenerator.Components.Plain.Utils
@@ -42,7 +40,7 @@ namespace VxFormGenerator.Components.Plain.Utils
             {
                 var obj = value as VxColor;
 
-                var ctor = typeof(VxColor).GetConstructor(new Type[] { typeof(string) });
+                var ctor = typeof(VxColor).GetConstructor(new[] { typeof(string) });
 
                 if (ctor != null)
                 {

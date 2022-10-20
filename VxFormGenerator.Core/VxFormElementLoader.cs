@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
-using System;
 using System.Linq.Expressions;
-using VxFormGenerator.Core.Layout;
 using VxFormGenerator.Core.Repository;
 
 namespace VxFormGenerator.Core

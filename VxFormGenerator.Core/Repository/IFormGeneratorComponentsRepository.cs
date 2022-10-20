@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace VxFormGenerator.Core.Repository
+﻿namespace VxFormGenerator.Core.Repository
 {
     /// <summary>
     /// Non-generic interface for DI in the <see cref="FormElementBase{TFormElement}"/>

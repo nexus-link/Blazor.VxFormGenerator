@@ -23,7 +23,7 @@ namespace VxFormGenerator.Core
         [Inject]
         IFormGeneratorOptions FormGeneratorOptions { get; set; }
 
-        [Parameter] public Layout.VxFormLayoutOptions FormLayoutOptions { get; set; }
+        [Parameter] public VxFormLayoutOptions FormLayoutOptions { get; set; }
 
         /// <summary>
         /// Override the default render method, determining if the <see cref="EditContext.Model"/> 
@@ -77,7 +77,7 @@ namespace VxFormGenerator.Core
                 CascadedEditContext.SetFieldCssClassProvider(provider);
             }
 
-            FormLayoutOptions ??= (VxFormLayoutOptions) ScopedServices.GetService(typeof(Layout.VxFormLayoutOptions));
+            FormLayoutOptions ??= (VxFormLayoutOptions) ScopedServices.GetService(typeof(VxFormLayoutOptions));
         }
 
 

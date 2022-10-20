@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
@@ -44,7 +43,7 @@ namespace VxFormGenerator.Components.Plain.Components
                        // Create the handler for ValueChanged. This wil update the model instance with the input
                        builder.AddAttribute(index++, nameof(ValueChanged),
                               Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
-                                  EventCallback.Factory.Create<bool>(
+                                  EventCallback.Factory.Create(
                                       dataContext, EventCallback.Factory.
                                       CreateInferred(val.Value, value => val.Value = value, val.Value))));
 

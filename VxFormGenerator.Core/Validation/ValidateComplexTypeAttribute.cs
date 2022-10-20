@@ -5,7 +5,6 @@
 // Shameless copy of https://github.com/dotnet/aspnetcore/blob/5da314644ae882ff22fb43101d0c3d89a35c40e9/src/Components/WebAssembly/Validation/src/ObjectGraphDataAnnotationsValidator.cs
 // Because of the preview nature and the needs for adding a full preview dependency for only this wasn't my preffered choose
 
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace VxFormGenerator.Core.Validation

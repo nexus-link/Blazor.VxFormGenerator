@@ -1,10 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
 using System.Dynamic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace VxFormGenerator.Core
 {
@@ -85,7 +81,7 @@ namespace VxFormGenerator.Core
                 .Select(m => new ValueReference<string, bool>() { Key = m.ToString(), Value = false })
                 .ToList();
 
-            this.AddRange(values);
+            AddRange(values);
 
         }
     }

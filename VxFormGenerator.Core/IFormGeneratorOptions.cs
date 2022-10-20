@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
-using VxFormGenerator.Core.Layout;
 
 namespace VxFormGenerator.Core
 {

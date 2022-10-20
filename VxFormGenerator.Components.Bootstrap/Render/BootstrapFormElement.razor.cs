@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using VxFormGenerator.Core;
+﻿using VxFormGenerator.Core;
 
 namespace VxFormGenerator.Components.Bootstrap.Render
 {

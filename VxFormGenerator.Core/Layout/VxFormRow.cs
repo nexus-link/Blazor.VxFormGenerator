@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace VxFormGenerator.Core.Layout
+﻿namespace VxFormGenerator.Core.Layout
 {
     public class VxFormRow : ICloneable
     {
@@ -25,7 +21,7 @@ namespace VxFormGenerator.Core.Layout
 
         public object Clone()
         {
-            return new VxFormRow(this.Id) { Columns = this.Columns, RowLayoutAttribute = this.RowLayoutAttribute };
+            return new VxFormRow(Id) { Columns = Columns, RowLayoutAttribute = RowLayoutAttribute };
         }
 
         internal static VxFormRow Create(VxFormElementLayoutAttribute layoutAttr, VxFormRowLayoutAttribute vxFormRowLayoutAttribute, VxFormLayoutOptions options)

@@ -1,14 +1,9 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
 using System.Dynamic;
 using System.Globalization;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using VxFormGenerator.Core.Layout;
 
 namespace VxFormGenerator.Core.Render
@@ -22,8 +17,8 @@ namespace VxFormGenerator.Core.Render
             get
             {
 
-                if (FormLayoutOptions.LabelOrientation == LabelOrientation.TOP && this.FormColumnDefinition.RenderOptions.ColSpan > 0)
-                    return $"col-{this.FormColumnDefinition.RenderOptions.ColSpan}";
+                if (FormLayoutOptions.LabelOrientation == LabelOrientation.TOP && FormColumnDefinition.RenderOptions.ColSpan > 0)
+                    return $"col-{FormColumnDefinition.RenderOptions.ColSpan}";
                 else
                     return "col";
             }
@@ -43,7 +38,7 @@ namespace VxFormGenerator.Core.Render
                 return "";
             }
         }
-        [Parameter] public Layout.VxFormElementDefinition FormColumnDefinition { get; set; }
+        [Parameter] public VxFormElementDefinition FormColumnDefinition { get; set; }
 
         public RenderFragment CreateFormElement() => builder =>
         {
@@ -58,7 +53,7 @@ namespace VxFormGenerator.Core.Render
                     var value = accessor[key];
 
                     // Get the generic CreateFormComponent and set the property type of the model and the elementType that is rendered
-                    var method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferenceExpando), BindingFlags.NonPublic | BindingFlags.Instance);
+                    var method = typeof(VxFormColumnBase).GetMethod(nameof(CreateFormElementReferenceExpando), BindingFlags.NonPublic | BindingFlags.Instance);
                     var genericMethod = method.MakeGenericMethod(value.GetType());
                     // Execute the method with the following parameters
                     genericMethod.Invoke(this, new object[] { accessor, key, builder, FormColumnDefinition });
@@ -68,18 +63,18 @@ namespace VxFormGenerator.Core.Render
             {
                 var propertyFormElement = FormColumnDefinition.Model.GetType().GetProperty(FormColumnDefinition.Name);
                 // Get the generic CreateFormComponent and set the property type of the model and the elementType that is rendered
-                var method = typeof(VxFormColumnBase).GetMethod(nameof(VxFormColumnBase.CreateFormElementReferencePoco), BindingFlags.NonPublic | BindingFlags.Instance);
+                var method = typeof(VxFormColumnBase).GetMethod(nameof(CreateFormElementReferencePoco), BindingFlags.NonPublic | BindingFlags.Instance);
                 var genericMethod = method.MakeGenericMethod(propertyFormElement.PropertyType);
                 // Execute the method with the following parameters
-                genericMethod.Invoke(this, new object[] { FormColumnDefinition.Model, propertyFormElement, builder, FormColumnDefinition });
+                genericMethod.Invoke(this, new[] { FormColumnDefinition.Model, propertyFormElement, builder, FormColumnDefinition });
             }
         };
 
         private void CreateFormElementReferencePoco<TValue>(object model, PropertyInfo propertyInfo,
-            RenderTreeBuilder builder, Layout.VxFormElementDefinition formColumnDefinition)
+            RenderTreeBuilder builder, VxFormElementDefinition formColumnDefinition)
         {
             var valueChanged = Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
-                        EventCallback.Factory.Create<TValue>(
+                        EventCallback.Factory.Create(
                             this, EventCallback.Factory.
                             CreateInferred(this, value => propertyInfo.SetValue(model, value),
 
@@ -114,7 +109,7 @@ namespace VxFormGenerator.Core.Render
         /// <param name="builder"></param>
         /// <param name="formColumnDefinition"></param>
         private void CreateFormElementReferenceExpando<TValue>(ExpandoObject model, string key,
-            RenderTreeBuilder builder, Layout.VxFormElementDefinition formColumnDefinition)
+            RenderTreeBuilder builder, VxFormElementDefinition formColumnDefinition)
         {
             // cast the model to a dictionary so it's accessable
             var accessor = ((IDictionary<string, object>)model);
@@ -123,7 +118,7 @@ namespace VxFormGenerator.Core.Render
             accessor.TryGetValue(key, out value1);
 
             var valueChanged = Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
-                        EventCallback.Factory.Create<TValue>(
+                        EventCallback.Factory.Create(
                             this, EventCallback.Factory.
                             CreateInferred(this, value => accessor[key] = value,
                             (TValue)accessor[key])));

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using VxFormGenerator.Core.Layout;
 
 namespace VxFormGeneratorDemoData
@@ -24,9 +19,9 @@ namespace VxFormGeneratorDemoData
         {
             return new VxFormLayoutOptions()
             {
-                ShowPlaceholder = (PlaceholderPolicy)this.ShowPlaceholder,
-                LabelOrientation = (LabelOrientation)this.LabelOrientation,
-                VisualValidationPolicy = (VisualFeedbackValidationPolicy)this.VisualValidationPolicy
+                ShowPlaceholder = (PlaceholderPolicy)ShowPlaceholder,
+                LabelOrientation = (LabelOrientation)LabelOrientation,
+                VisualValidationPolicy = (VisualFeedbackValidationPolicy)VisualValidationPolicy
             };
         }
     }

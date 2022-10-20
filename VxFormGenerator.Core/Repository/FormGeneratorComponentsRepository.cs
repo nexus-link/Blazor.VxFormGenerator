@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace VxFormGenerator.Core.Repository
+﻿namespace VxFormGenerator.Core.Repository
 {
 
     public class FormGeneratorComponentsRepository<TKey> : IFormGeneratorComponentsRepository

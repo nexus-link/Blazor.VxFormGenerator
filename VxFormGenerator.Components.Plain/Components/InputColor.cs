@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using VxFormGenerator.Components.Plain.Models;
@@ -16,7 +15,7 @@ namespace VxFormGenerator.Components.Plain.Components
                 builder.AddMultipleAttributes(1, AdditionalAttributes);
                 builder.AddAttribute(2, "type", "color");
                 builder.AddAttribute(3, "class", CssClass);
-                builder.AddAttribute(5, "onchange", EventCallback.Factory.CreateBinder<VxColor>(this, value => CurrentValue = value, CurrentValue));
+                builder.AddAttribute(5, "onchange", EventCallback.Factory.CreateBinder(this, value => CurrentValue = value, CurrentValue));
                 builder.CloseElement();
             }
 
