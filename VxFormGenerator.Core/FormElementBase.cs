@@ -16,7 +16,8 @@ namespace VxFormGenerator.Core
         /// <summary>
         /// Bindable property to set the class
         /// </summary>
-        public string CssClass { get => string.Join(" ", CssClasses.ToArray()); }
+        public string CssClass => string.Join(" ", CssClasses.ToArray());
+
         /// <summary>
         /// Setter for the classes of the form container
         /// </summary>

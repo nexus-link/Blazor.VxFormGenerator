@@ -25,7 +25,7 @@ namespace VxFormGeneratorDemoData
         public bool ThrowingUp { get; set; }
 
         [Display(Name = "Throwing up dict")]
-        public ValueReferences<FoodKind> ThrowingUpDict { get; set; } = new ValueReferences<FoodKind>();
+        public ValueReferences<FoodKind> ThrowingUpDict { get; set; } = new();
         [Display(Name = "Color")]
         public VxColor Color { get; set; }
     }

@@ -10,7 +10,7 @@ namespace VxFormGenerator.Components.Plain.Components
         /// </summary>
         [Parameter] public RenderFragment ChildContent { get; set; }
 
-        readonly List<VxInputCheckbox> _checkboxes = new List<VxInputCheckbox>();
+        readonly List<VxInputCheckbox> _checkboxes = new();
 
         /// <inheritdoc />
         protected override bool TryParseValueFromString(string value, out T result, out string validationErrorMessage)

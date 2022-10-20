@@ -6,7 +6,7 @@ namespace VxFormGenerator.Core.Layout
     {
         public string Name { get; set; }
 
-        public List<VxFormGroup> Groups { get; protected set; } = new List<VxFormGroup>();
+        public List<VxFormGroup> Groups { get; protected set; } = new();
 
         internal static VxFormDefinition CreateFromModel(object model, VxFormLayoutOptions options)
         {

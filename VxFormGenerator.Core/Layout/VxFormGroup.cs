@@ -12,7 +12,7 @@ namespace VxFormGenerator.Core.Layout
 
         public string Id { get; set; }
 
-        public List<VxFormRow> Rows { get; set; } = new List<VxFormRow>();
+        public List<VxFormRow> Rows { get; set; } = new();
 
         internal static bool IsFormGroup(PropertyInfo propertyInfo)
         {

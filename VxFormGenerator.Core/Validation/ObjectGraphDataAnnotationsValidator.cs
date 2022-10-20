@@ -15,8 +15,8 @@ namespace VxFormGenerator.Core.Validation
 {
     public class ObjectGraphDataAnnotationsValidator : ComponentBase
     {
-        private static readonly object ValidationContextValidatorKey = new object();
-        private static readonly object ValidatedObjectsKey = new object();
+        private static readonly object ValidationContextValidatorKey = new();
+        private static readonly object ValidatedObjectsKey = new();
         private ValidationMessageStore _validationMessageStore;
 
         [CascadingParameter]

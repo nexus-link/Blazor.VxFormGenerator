@@ -6,7 +6,7 @@
         public string Label { get; set; }
         public string Id { get; set; }
 
-        public List<VxFormElementDefinition> Columns { get; set; } = new List<VxFormElementDefinition>();
+        public List<VxFormElementDefinition> Columns { get; set; } = new();
 
         internal VxFormRowLayoutAttribute RowLayoutAttribute { get; set; }
 

@@ -3,7 +3,7 @@
 
     public class FormGeneratorComponentsRepository<TKey> : IFormGeneratorComponentsRepository
     {
-        protected Dictionary<TKey, Type> ComponentDict = new Dictionary<TKey, Type>();
+        protected Dictionary<TKey, Type> ComponentDict = new();
 
         public Type DefaultComponent { get; protected set; }
 

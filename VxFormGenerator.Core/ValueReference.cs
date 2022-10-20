@@ -12,11 +12,7 @@ namespace VxFormGenerator.Core
 
         public TValue Value
         {
-            get
-            {
-
-                return _value;
-            }
+            get => _value;
             set
             {
                 _value = value;

@@ -5,7 +5,7 @@ namespace VxFormGenerator.Components.Bootstrap
 {
     public class VxBootstrapFormCssClassProvider : VxFormCssClassProviderBase
     {
-        public override VxFormCssClassAttribute CssClassAttribute { get => new VxFormCssClassAttribute() { Valid = "is-valid", Invalid = "is-invalid" }; }
+        public override VxFormCssClassAttribute CssClassAttribute => new() { Valid = "is-valid", Invalid = "is-invalid" };
 
         public override string GetFieldCssClass(EditContext editContext, in FieldIdentifier fieldIdentifier)
         {

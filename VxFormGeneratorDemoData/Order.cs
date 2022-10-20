@@ -13,13 +13,13 @@ namespace VxFormGeneratorDemoData
         [VxFormGroup(Label = "Delivery")]
         // Use ValidateComplexType to valdidate a complex object
         [ValidateComplexType]
-        public AddressViewModel Address { get; set; } = new AddressViewModel();
+        public AddressViewModel Address { get; set; } = new();
 
         // Indicate that this property type should be rendered as a separate elements in the form and give it a label
         [VxFormGroup(Label = "Invoice")]
         // Use ValidateComplexType to validate a complex object
         [ValidateComplexType]
-        public AddressViewModel BillingAddress { get; set; } = new AddressViewModel();
+        public AddressViewModel BillingAddress { get; set; } = new();
 
         [Display(Name = "Send insured")]
         public bool Valid { get; set; } = true;

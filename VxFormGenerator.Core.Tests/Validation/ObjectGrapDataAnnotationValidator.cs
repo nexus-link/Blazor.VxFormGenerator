@@ -133,7 +133,7 @@ namespace VxFormGenerator.Core.Tests.Validation
             public string Property1 { get; set; }
 
             [ValidateComplexType]
-            public TestValidatableObject Property2 { get; set; } = new TestValidatableObject();
+            public TestValidatableObject Property2 { get; set; } = new();
         }
 
         [Fact]
@@ -210,8 +210,8 @@ namespace VxFormGenerator.Core.Tests.Validation
         {
             var model = new List<SimpleModel>
             {
-                new SimpleModel(),
-                new SimpleModel { Name = "test", },
+                new(),
+                new() { Name = "test", },
             };
 
             var editContext = Validate(model);
@@ -244,8 +244,8 @@ namespace VxFormGenerator.Core.Tests.Validation
         {
             var model = new List<TestValidatableObject>
             {
-                new TestValidatableObject(),
-                new TestValidatableObject { Name = "test", },
+                new(),
+                new() { Name = "test", },
             };
 
             var editContext = Validate(model);
@@ -363,7 +363,7 @@ namespace VxFormGenerator.Core.Tests.Validation
             public string Id { get; init; }
 
             [ValidateComplexType]
-            public List<Node> Related { get; } = new List<Node>();
+            public List<Node> Related { get; } = new();
         }
 
         [Fact]

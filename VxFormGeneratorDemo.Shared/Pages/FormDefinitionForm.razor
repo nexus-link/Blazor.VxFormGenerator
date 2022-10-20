@@ -48,8 +48,8 @@
     /// Model that is used for the form
     /// </summary>
     private object _model = new FeedingSession();
-    private readonly VxFormLayoutOptionsAnnotated _options = new VxFormLayoutOptionsAnnotated();
-    private VxFormLayoutOptions _optionsForForm = new VxFormLayoutOptions();
+    private readonly VxFormLayoutOptionsAnnotated _options = new();
+    private VxFormLayoutOptions _optionsForForm = new();
 
     protected override void OnInitialized()
     {
