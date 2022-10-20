@@ -28,11 +28,11 @@ namespace VxFormGeneratorDemoData
 
     public enum TypeOfForm
     {
-        [Display(Name = "Simple datastructure")]
+        [Display(Name = "Simple data structure")]
         SIMPLE = 0,
-        [Display(Name = "Advanced datastructure")]
+        [Display(Name = "Advanced data structure")]
         ADVANCED = 1,
-        [Display(Name = "Complex datastructure")]
+        [Display(Name = "Complex data structure")]
         COMPLEX = 2
     }
 
@@ -77,10 +77,10 @@ namespace VxFormGeneratorDemoData
         EXPLICIT_LABEL_FALLBACK = 2,
         /// <summary>
         /// Only show placeholders for when the component thinks it's relevant.
-        /// Placeholders will be shown for multiple formelements on one row.
+        /// Placeholders will be shown for multiple form elements on one row.
         /// Placeholders set explicitly will be overridden by the <see cref="VxFormElementLayoutAttribute.Label"/> or <see cref="DisplayAttribute.Name"/>.
         /// </summary>
-        [Display(Name = "Implicit", Description = "Only show placeholders for when the component thinks it's relevant. Placeholders will be shown for multiple formelements on one row.")]
+        [Display(Name = "Implicit", Description = "Only show placeholders for when the component thinks it's relevant. Placeholders will be shown for multiple form elements on one row.")]
         IMPLICIT = 3,
         /// <summary>
         /// Only show placeholders for when the component thinks it's relevant.

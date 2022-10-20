@@ -6,7 +6,7 @@ using VxFormGenerator.Core;
 
 namespace VxFormGenerator.Components.Plain.Components
 {
-    public class InputCheckboxMultipleWithChildren<TValue> : InputCheckboxMultiple<TValue>, IRenderChildrenSwapable
+    public class InputCheckboxMultipleWithChildren<TValue> : InputCheckboxMultiple<TValue>, IRenderChildrenSwappable
     {
 
         public static void RenderChildren(RenderTreeBuilder builder1,

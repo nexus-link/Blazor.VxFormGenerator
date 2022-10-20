@@ -28,7 +28,7 @@ namespace VxFormGenerator.Core
     /// Helper interface for that allows a derived component set the component that needs to render. 
     /// Useful for components that render children and should allow a different styling without changing logic
     /// </summary>
-    public interface IRenderChildrenSwapable: IRenderChildren
+    public interface IRenderChildrenSwappable: IRenderChildren
     {
         // Function that will render the children for <see cref="TypeToRend"/>
         // <typeparam name="TElement">The element type of the <see cref="TypeToRender"/></typeparam>

@@ -14,12 +14,12 @@ namespace VxFormGenerator.Components.Plain.Components
             string fieldIdentifier)
         {
             // the builder position is between the builder.OpenComponent() and builder.CloseComponent()
-            // This means that the component of InputSelect is added en stil open for changes.
+            // This means that the component of InputSelect is added and still open for changes.
             // We can create a new RenderFragment and set the ChildContent attribute of the InputSelect component
             builder1.AddAttribute(index + 1, nameof(ChildContent),
                 new RenderFragment(builder =>
                 {
-                    // check if the type of the propery is an Enum
+                    // check if the type of the property is an Enum
                     if (typeof(TValue).IsEnum)
                     {
                         // when type is a enum present them as an <option> element 

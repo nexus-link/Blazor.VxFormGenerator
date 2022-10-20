@@ -8,17 +8,17 @@
         public VxFormElementLayoutAttribute RenderOptions { get; set; }
         public object Model { get; }
 
-        public VxFormElementDefinition(string fieldname, VxFormElementLayoutAttribute layoutAttr, object modelInstance)
+        public VxFormElementDefinition(string fieldName, VxFormElementLayoutAttribute layoutAttr, object modelInstance)
         {
             RenderOptions = layoutAttr;
-            Name = fieldname;
+            Name = fieldName;
             Model = modelInstance;
         }
 
 
-        internal static VxFormElementDefinition Create(string fieldname, VxFormElementLayoutAttribute layoutAttr, object modelInstance, VxFormLayoutOptions options)
+        internal static VxFormElementDefinition Create(string fieldName, VxFormElementLayoutAttribute layoutAttr, object modelInstance, VxFormLayoutOptions options)
         {
-            return new VxFormElementDefinition(fieldname, layoutAttr, modelInstance);
+            return new VxFormElementDefinition(fieldName, layoutAttr, modelInstance);
         }
     }
 }

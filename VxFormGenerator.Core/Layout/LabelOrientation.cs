@@ -37,7 +37,7 @@ namespace VxFormGenerator.Core.Layout
         EXPLICIT_LABEL_FALLBACK= 2,
         /// <summary>
         /// Only show placeholders for when the component thinks it's relevant.
-        /// Placeholders will be shown for multiple formelements on one row.
+        /// Placeholders will be shown for multiple form elements on one row.
         /// Placeholders set explicitly will be overridden by the <see cref="VxFormElementLayoutAttribute.Label"/> or <see cref="DisplayAttribute.Name"/>.
         /// </summary>       
         IMPLICIT = 3,

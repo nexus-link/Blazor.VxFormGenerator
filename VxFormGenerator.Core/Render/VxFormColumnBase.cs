@@ -44,7 +44,7 @@ namespace VxFormGenerator.Core.Render
         {
             if (FormColumnDefinition.Model is ExpandoObject)
             {
-                // Accesing a ExpandoObject requires to cast the model as a dictionary, so it's accesable by a key of type string
+                // Accessing a ExpandoObject requires to cast the model as a dictionary, so it's accessible by a key of type string
                 var accessor = ((IDictionary<string, object>)FormColumnDefinition.Model);
 
                 foreach (var key in accessor.Keys)
@@ -111,7 +111,7 @@ namespace VxFormGenerator.Core.Render
         private void CreateFormElementReferenceExpando<TValue>(ExpandoObject model, string key,
             RenderTreeBuilder builder, VxFormElementDefinition formColumnDefinition)
         {
-            // cast the model to a dictionary so it's accessable
+            // cast the model to a dictionary so it's accessible
             var accessor = ((IDictionary<string, object>)model);
 
             object value1 = default(TValue);

@@ -85,7 +85,7 @@ namespace VxFormGenerator.Core.Layout
         /// Get the values of built-in attributes like <see cref="DisplayAttribute"/> and patch it to a <see cref="VxFormElementLayoutAttribute"/>
         /// </summary>
         /// <param name="layoutAttr">The attribute to patch</param>
-        /// <param name="prop">Property for reflection purpouses</param>
+        /// <param name="prop">Property for reflection purposes</param>
         private static void PatchLayoutWithBuiltInAttributes(VxFormElementLayoutAttribute layoutAttr, PropertyInfo prop)
         {
             if (prop

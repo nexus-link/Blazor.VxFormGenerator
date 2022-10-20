@@ -4,7 +4,7 @@ using VxFormGenerator.Core.Layout;
 namespace VxFormGeneratorDemoData
 {
     // Add label to row 2
-    [VxFormRowLayout(Id = 2, Label = "Adress")]
+    [VxFormRowLayout(Id = 2, Label = "Address")]
     public class AddressViewModel
     {
         [Display(Name = "Firstname")]

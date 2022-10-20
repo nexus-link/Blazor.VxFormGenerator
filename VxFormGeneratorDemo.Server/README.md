@@ -389,7 +389,7 @@ Now that is out of the way let's start by creating a new folder and component.
                 // Create the component based on the mapped Element Type
                 builder.OpenComponent(0, typeof(TElement));
     
-                // Bind the value of the input base the the propery of the model instance
+                // Bind the value of the input base the the property of the model instance
                 var s = propInfoValue.GetValue(dataContext);
                 builder.AddAttribute(1, nameof(InputBase<T>.Value), s);
     
@@ -734,7 +734,7 @@ namespace FormGeneratorDemo.Components.FormGenerator
                builder.AddAttribute(index + 1, nameof(InputSelect<TValue>.ChildContent),
                    new RenderFragment(builder =>
                    {
-                       // check if the type of the propery is an Enum
+                       // check if the type of the property is an Enum
                        if (typeof(TValue).IsEnum)
                        {
                            // when type is a enum present them as an <option> element 

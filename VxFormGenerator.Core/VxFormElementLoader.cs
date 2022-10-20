@@ -47,7 +47,7 @@ namespace VxFormGenerator.Core
 
             builder.OpenComponent(0, elementType);
 
-            // Bind the value of the input base the the propery of the model instance
+            // Bind the value of the input base the the property of the model instance
             builder.AddAttribute(1, nameof(FormElementBase<TValue>.Value), ValueReference.Value);
 
             // Create the handler for ValueChanged. This wil update the model instance with the input

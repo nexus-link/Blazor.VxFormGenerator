@@ -113,7 +113,7 @@ namespace VxFormGenerator.Core
             // Create the component based on the mapped Element Type
             builder.OpenComponent(treeIndex, elementType);
 
-            // Bind the value of the input base the the propery of the model instance
+            // Bind the value of the input base the the property of the model instance
             builder.AddAttribute(treeIndex++, nameof(InputBase<TFormElement>.Value), Value);
 
             // Create the handler for ValueChanged. This wil update the model instance with the input
@@ -124,7 +124,7 @@ namespace VxFormGenerator.Core
             if (FormColumnDefinition.RenderOptions.Placeholder != null)
                 builder.AddAttribute(treeIndex++, "placeholder", FormColumnDefinition.RenderOptions.Placeholder);
 
-            // Set the class for the the formelement.
+            // Set the class for the the form element.
             builder.AddAttribute(treeIndex++, "class", GetDefaultFieldClasses(Activator.CreateInstance(elementType) as InputBase<TFormElement>));
 
             CheckForInterfaceActions(this, FormColumnDefinition.Model, fieldIdentifier, builder, treeIndex++, elementType);
@@ -138,7 +138,7 @@ namespace VxFormGenerator.Core
             object dataContext,
             string fieldIdentifier, RenderTreeBuilder builder, int indexBuilder, Type elementType)
         {
-            // Check if the component has the IRenderChildren and renderen them in the form control
+            // Check if the component has the IRenderChildren and rendered them in the form control
             if (VxHelpers.TypeImplementsInterface(elementType, typeof(IRenderChildren)))
             {
                 var method = elementType.GetMethod(nameof(IRenderChildren.RenderChildren), BindingFlags.Public | BindingFlags.FlattenHierarchy | BindingFlags.Static);
@@ -150,7 +150,7 @@ namespace VxFormGenerator.Core
         /// <summary>
         /// Merges the default control classes with the <see cref="InputBase{TValue}.AdditionalAttributes"/> 'class' key
         /// </summary>
-        /// <typeparam name="T">The property type of the formelement</typeparam>
+        /// <typeparam name="T">The property type of the form element</typeparam>
         /// <param name="instance">The instance of the component representing the form control</param>
         /// <returns></returns>
         private string GetDefaultFieldClasses<T>(InputBase<T> instance)

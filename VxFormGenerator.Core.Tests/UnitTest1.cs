@@ -15,7 +15,7 @@ namespace VxFormGenerator.Core.Tests
         }
 
         [Fact]
-        public void EnumExtentionGetAttribute()
+        public void EnumExtensionGetAttribute()
         {
 
             var value = VisualFeedbackValidationPolicy.VALID_AND_INVALID;
