@@ -9,7 +9,7 @@ namespace VxFormGenerator.Components.Plain.Models
 
         // will contain standard 32bit sRGB (ARGB)
         //
-        public string Value { get; private set; }
+        public string Value { get; }
 
         public VxColor(string value)
         {

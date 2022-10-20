@@ -8,9 +8,9 @@ namespace VxFormGenerator.Core.Layout
     {
 
 
-        public string Name { get; private set; }
+        public string Name { get; }
         public VxFormElementLayoutAttribute RenderOptions { get; set; }
-        public object Model { get; private set; }
+        public object Model { get; }
 
         public VxFormElementDefinition(string fieldname, VxFormElementLayoutAttribute layoutAttr, object modelInstance)
         {

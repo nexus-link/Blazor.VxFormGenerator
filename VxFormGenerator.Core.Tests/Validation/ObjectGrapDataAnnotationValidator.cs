@@ -368,7 +368,7 @@ namespace VxFormGenerator.Core.Tests.Validation
             public string Id { get; set; }
 
             [ValidateComplexType]
-            public List<Node> Related { get; set; } = new List<Node>();
+            public List<Node> Related { get; } = new List<Node>();
         }
 
         [Fact]
