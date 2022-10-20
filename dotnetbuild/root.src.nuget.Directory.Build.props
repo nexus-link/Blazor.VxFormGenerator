@@ -1,0 +1,17 @@
+<Project>
+  <!--
+  Project settings common to all src projects, as documented at 
+  https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)\root.src.Directory.Build.props" />
+
+  <!-- NuGet package stuff -->
+  <PropertyGroup>
+    <Authors>XLENT Link</Authors>
+    <PackageProjectUrl>https://dev.azure.com/nexuslink/Nexus%20Libs/_git/products?path=/nexus-bridge</PackageProjectUrl>
+    <PackageLanguage>en-US</PackageLanguage>
+    <PackageTags>nexus;link;nexus-bridge</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+</Project>

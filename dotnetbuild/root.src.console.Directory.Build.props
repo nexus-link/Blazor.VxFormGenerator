@@ -1,0 +1,18 @@
+<Project>
+	<!--
+  Project settings common to all src projects, as documented at 
+  https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)\root.src.Directory.Build.props" />
+
+  <!--
+ https://stackoverflow.com/questions/358196/c-sharp-internal-access-modifier-when-doing-unit-testing 
+ https://stackoverflow.com/questions/42810705/visual-studio-2017-and-the-new-csproj-internalsvisibleto/49978185#49978185
+-->
+
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+</Project>

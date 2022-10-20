@@ -1,0 +1,8 @@
+<Project>
+	<!--
+  Project settings common to all src projects, as documented at 
+  https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)\root.src.Directory.Build.props" />
+
+</Project>

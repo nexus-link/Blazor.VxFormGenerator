@@ -1,0 +1,30 @@
+<Project>
+	<!--
+  Project settings common to all src projects, as documented at 
+  https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022
+  -->
+
+  <!-- Compiler settings -->
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFramework>net6.0</TargetFramework>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <!-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings -->
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!--
+    0219: Variable assigned, but not used https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs0219
+    CS0618: Member is obsolete https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs0618
+    CS1591: Missing documentation https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1591
+    CS1573: Missing param tag https://docs.microsoft.com/en-us/dotnet/csharp/misc/cs1573
+    CS8321: Declare method is never used. No link, because no MS documentation found.
+    -->
+    <WarningsNotAsErrors>CS0219, CS0618, CS1591, CS8321, CS1573</WarningsNotAsErrors>
+    <Configurations>Debug</Configurations>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+</Project>

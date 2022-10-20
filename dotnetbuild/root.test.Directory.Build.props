@@ -1,0 +1,18 @@
+<Project>
+  <!--
+  Project settings common to all src projects, as documented at 
+  https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)\root.Directory.Build.props" />
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <IsPackable>false</IsPackable>
+    <!--
+    xUnit1026: This rule is triggered by having an unused parameter on your theory https://xunit.net/xunit.analyzers/rules/xUnit1026
+    The rest of the warning codes can be seen in an ancestor Directory.Build.props.
+    -->
+    <WarningsNotAsErrors>xUnit1026, CS0219, CS0618, CS1591, CS8321</WarningsNotAsErrors>
+  </PropertyGroup>
+
+</Project>
