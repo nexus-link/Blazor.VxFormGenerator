@@ -105,13 +105,14 @@ namespace VxFormGenerator.Core.Render
         }
 
         /// <summary>
-        /// Create a <see cref="VxFormElementLoader{TValue}"/> that will create a <see cref="FormElement"/>
+        /// Create a <see cref="VxFormElementLoader{TValue}"/> that will create a <see cref="FormElementReference{TValue}"/>
         /// based on the dynamic <see cref="ExpandoObject"/>. This allows for dynamic usage of the form-generator.
         /// </summary>
         /// <typeparam name="TValue"></typeparam>
         /// <param name="model"></param>
         /// <param name="key"></param>
         /// <param name="builder"></param>
+        /// <param name="formColumnDefinition"></param>
         private void CreateFormElementReferenceExpando<TValue>(ExpandoObject model, string key,
             RenderTreeBuilder builder, Layout.VxFormElementDefinition formColumnDefinition)
         {

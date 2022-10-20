@@ -3,12 +3,13 @@ using Microsoft.AspNetCore.Components.Rendering;
 using System;
 using System.Linq.Expressions;
 using VxFormGenerator.Core.Layout;
+using VxFormGenerator.Core.Repository;
 
 namespace VxFormGenerator.Core
 {
     /// <summary>
-    /// The loader has the task to create a <see cref="FormElement"/> with the correct bind-Value.
-    /// It searches for a match in the <see cref="FormGeneratorComponentsRepository"/> and will render the mapped component.
+    /// The loader has the task to create a <see cref="FormElementBase{TFormElement}"/> with the correct bind-Value.
+    /// It searches for a match in the <see cref="FormGeneratorComponentsRepository{TKey}"/> and will render the mapped component.
     /// </summary>
     /// <typeparam name="TValue">The type of the property</typeparam>
     public class VxFormElementLoader<TValue> : OwningComponentBase
@@ -29,7 +30,7 @@ namespace VxFormGenerator.Core
         }
 
         /// <summary>
-        /// Create the <see cref="FormElement"/> that is associated with the <see cref="TValue"/>
+        /// Create the <see cref="FormElementBase{TFormElement}"/> that is associated with the <typeparamref name="TValue"/>
         /// </summary>
         /// <param name="builder"></param>
         protected override void BuildRenderTree(RenderTreeBuilder builder)

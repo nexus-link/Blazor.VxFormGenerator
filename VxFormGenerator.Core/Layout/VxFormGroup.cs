@@ -87,7 +87,7 @@ namespace VxFormGenerator.Core.Layout
 
         }
         /// <summary>
-        /// Get the values of built-in attributes like <see cref="DisplayAttribute"/> and patch it to a <see cref="VxFormLayoutAttribute"/>
+        /// Get the values of built-in attributes like <see cref="DisplayAttribute"/> and patch it to a <see cref="VxFormElementLayoutAttribute"/>
         /// </summary>
         /// <param name="layoutAttr">The attribute to patch</param>
         /// <param name="prop">Property for reflection purpouses</param>

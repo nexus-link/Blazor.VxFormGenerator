@@ -32,7 +32,7 @@ namespace VxFormGenerator.Core
         /// </summary>
         [Parameter] public List<string> DefaultFieldClasses { get; set; }
         /// <summary>
-        /// The identifier for the <see cref="FormElement"/>"/> used by the label element
+        /// The identifier for the <see cref="FormElementBase{TFormElement}"/>"/> used by the label element
         /// </summary>
         [Parameter] public string Id { get; set; }
         /// <summary>
@@ -65,9 +65,8 @@ namespace VxFormGenerator.Core
 
 
         /// <summary>
-        /// A method that renders the form control based on the <see cref="FormElement.FieldIdentifier"/>
+        /// A method that renders the form control based on the <see cref="FieldIdentifier"/>
         /// </summary>
-        /// <param name="propInfoValue"></param>
         /// <returns></returns>
         public RenderFragment CreateComponent() => builder =>
         {
@@ -97,16 +96,19 @@ namespace VxFormGenerator.Core
             this.CreateFormComponent(this, FormColumnDefinition.Model, FormColumnDefinition.Name, builder, elementType);
         };
 
+
+        // <typeparam name="T">The type of the property</typeparam>
+        // <typeparam name="TElement">The type of the form element, should be based on <see cref="InputBase{TValue}"/>, like a <see cref="InputText"/></typeparam>
+        // <param name="propInfoValue">The property that is being rendered</param>
+        // <param name="instance">THe control instance</param>
         /// <summary>
         /// Creates the component that is rendered in the form
         /// </summary>
-        /// <typeparam name="T">The type of the property</typeparam>
-        /// <typeparam name="TElement">The type of the form element, should be based on <see cref="InputBase{TValue}"/>, like a <see cref="InputText"/></typeparam>
-        /// <param name="target">This <see cref="FormElement"/> </param>
+        /// <param name="target">This <see cref="FormElementBase{TFormElement}"/> </param>
         /// <param name="dataContext">The Model instance</param>
-        /// <param name="propInfoValue">The property that is being rendered</param>
+        /// <param name="fieldIdentifier"></param>
         /// <param name="builder">The render tree of this element</param>
-        /// <param name="instance">THe control instance</param>
+        /// <param name="elementType"></param>
         public void CreateFormComponent(object target,
             object dataContext,
             string fieldIdentifier, RenderTreeBuilder builder, Type elementType)

@@ -1,19 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <!-- Use default project settings as described in https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022  -->
+  <Import Project="$(SolutionDir)dotnetbuild\root.src.nuget.Directory.Build.props" />
+
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
     <Version>0.4.0</Version>
-    <Authors>Alex Knijf</Authors>
-    <Company>Codershop</Company>
     <Description>The unstyled version of the input components for the VxFormGenerator</Description>
-	  <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/Aaltuj/VxFormGenerator</PackageProjectUrl>
-    <PackageTags>Form generator, Blazor, POCO</PackageTags>
-    <RepositoryUrl>https://github.com/Aaltuj/VxFormGenerator</RepositoryUrl>
-    <RepositoryType>GIT</RepositoryType>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>VxFormGenerator.Components.Plain</PackageId>
     <Product>VxFormGenerator.Components.Plain</Product>
-    <Copyright>Alex Knijf</Copyright>
   </PropertyGroup>
 
   <ItemGroup>

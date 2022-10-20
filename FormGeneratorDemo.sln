@@ -28,6 +28,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VxFormGeneratorDemo.Wasm", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VxFormGeneratorDemo.Shared", "VxFormGeneratorDemo.Shared\VxFormGeneratorDemo.Shared.csproj", "{EFD74D8B-C011-4464-B0DC-FDE5EFA1559E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{2381E697-86B9-4BFF-A174-C6184D099277}"
+	ProjectSection(SolutionItems) = preProject
+		dotnetbuild\root.Directory.Build.props = dotnetbuild\root.Directory.Build.props
+		dotnetbuild\root.src.console.Directory.Build.props = dotnetbuild\root.src.console.Directory.Build.props
+		dotnetbuild\root.src.Directory.Build.props = dotnetbuild\root.src.Directory.Build.props
+		dotnetbuild\root.src.lib.Directory.Build.props = dotnetbuild\root.src.lib.Directory.Build.props
+		dotnetbuild\root.src.nuget.Directory.Build.props = dotnetbuild\root.src.nuget.Directory.Build.props
+		dotnetbuild\root.src.web.Directory.Build.props = dotnetbuild\root.src.web.Directory.Build.props
+		dotnetbuild\root.test.Directory.Build.props = dotnetbuild\root.test.Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +80,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2381E697-86B9-4BFF-A174-C6184D099277} = {793D7184-2846-4E6D-A4C4-7B93D5EB276E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3153DC95-ACE4-473D-8019-C5E251952CEF}

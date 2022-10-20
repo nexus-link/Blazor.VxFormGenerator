@@ -8,9 +8,11 @@
   <!-- NuGet package stuff -->
   <PropertyGroup>
     <Authors>XLENT Link</Authors>
-    <PackageProjectUrl>https://dev.azure.com/nexuslink/Nexus%20Libs/_git/products?path=/nexus-bridge</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/nexus-link/Blazor.VxFormGenerator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nexus-link/Blazor.VxFormGenerator</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
     <PackageLanguage>en-US</PackageLanguage>
-    <PackageTags>nexus;link;nexus-bridge</PackageTags>
+    <PackageTags>nexus;link;blazor</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

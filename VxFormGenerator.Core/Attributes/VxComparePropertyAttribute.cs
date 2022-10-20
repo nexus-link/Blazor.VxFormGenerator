@@ -10,7 +10,7 @@ namespace VxFormGenerator.Core.Attributes
     public sealed class VxComparePropertyAttribute : CompareAttribute
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="ComparePropertyAttribute"/>.
+        /// Initializes a new instance of <see cref="VxComparePropertyAttribute"/>.
         /// </summary>
         /// <param name="otherProperty">The property to compare with the current property.</param>
         public VxComparePropertyAttribute(string otherProperty)

@@ -10,14 +10,17 @@ namespace VxFormGenerator.Core
     public interface IRenderChildren
     {
 
+        // Function that will render the children for <see cref="TypeToRend"/>
+        // <typeparam name="TElement">The element type of the <see cref="TypeToRender"/></typeparam>
+        // <param name="propInfoValue">The property that is filled by the <see cref="FormElement"/></param>
+        /// 
         /// <summary>
-        /// Function that will render the children for <see cref="TypeToRender"/>
+        /// Function that will render the children for see above
         /// </summary>
-        /// <typeparam name="TElement">The element type of the <see cref="TypeToRender"/></typeparam>
         /// <param name="builder">The builder for rendering a tree</param>
         /// <param name="index">The index of the element</param>
         /// <param name="dataContext">The model for the form</param>
-        /// <param name="propInfoValue">The property that is filled by the <see cref="FormElement"/></param>
+        /// <param name="fieldIdentifier"></param>
         public static void RenderChildren(RenderTreeBuilder builder, int index, object dataContext,
             string fieldIdentifier) => throw new NotImplementedException();
 
@@ -29,16 +32,18 @@ namespace VxFormGenerator.Core
     /// </summary>
     public interface IRenderChildrenSwapable: IRenderChildren
     {
-
+        // Function that will render the children for <see cref="TypeToRend"/>
+        // <typeparam name="TElement">The element type of the <see cref="TypeToRender"/></typeparam>
+        // <param name="propInfoValue">The property that is filled by the <see cref="FormElement"/></param>
+        /// 
         /// <summary>
-        /// Function that will render the children for <see cref="TypeToRender"/>
+        /// Function that will render the children for see above
         /// </summary>
-        /// <typeparam name="TElement">The element type of the <see cref="TypeToRender"/></typeparam>
         /// <param name="builder">The builder for rendering a tree</param>
         /// <param name="index">The index of the element</param>
         /// <param name="dataContext">The model for the form</param>
-        /// <param name="propInfoValue">The property that is filled by the <see cref="FormElement"/></param>
-        /// <param name="typeOfChildToRender">The type of the child that should be rendered</param>
+        /// <param name="fieldIdentifier"></param>
+        /// <param name="typeOfChildToRender"></param>
         public static void RenderChildren(RenderTreeBuilder builder, int index, object dataContext,
             string fieldIdentifier,
             Type typeOfChildToRender) => throw new NotImplementedException();

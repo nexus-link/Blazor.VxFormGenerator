@@ -1,9 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <!-- Use default project settings as described in https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build?view=vs-2022  -->
+  <Import Project="$(SolutionDir)dotnetbuild\root.test.Directory.Build.props" />
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

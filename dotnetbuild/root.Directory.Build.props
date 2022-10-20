@@ -9,7 +9,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <TargetFramework>net6.0</TargetFramework>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <LangVersion>latest</LangVersion>
     <!-- https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-options/errors-warnings -->
     <WarningLevel>4</WarningLevel>
