@@ -1,5 +1,5 @@
-﻿@namespace VxFormGenerator.Render.Plain
-@inherits VxFormGenerator.Render.Plain.VxFormRowComponent
+﻿@namespace VxFormGenerator.Components.Plain.Render
+@inherits VxFormGenerator.Components.Plain.Render.VxFormRowComponent
 
 
 
@@ -11,9 +11,9 @@
 
     @foreach (var column in FormRowDefinition.Columns)
     {
-        <VxFormGenerator.Render.Plain.VxFormColumn FormColumnDefinition="@column">
+        <VxFormGenerator.Components.Plain.Render.VxFormColumn FormColumnDefinition="@column">
 
-        </VxFormGenerator.Render.Plain.VxFormColumn>
+        </VxFormGenerator.Components.Plain.Render.VxFormColumn>
     }
 </div>
 

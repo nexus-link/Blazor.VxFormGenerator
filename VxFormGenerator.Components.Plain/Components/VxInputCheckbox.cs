@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using System;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Rendering;
 using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Form.Components.Plain
+namespace VxFormGenerator.Components.Plain.Components
 {
     public class VxInputCheckbox : VxInputBase<bool>, IDisposable
     {

@@ -1,13 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VxFormGenerator.Core;
 using VxFormGenerator.Core.Layout;
 
-namespace VxFormGenerator.Render.Plain
+namespace VxFormGenerator.Components.Plain.Render
 {
     public class VxFormGroupComponent : OwningComponentBase
     {

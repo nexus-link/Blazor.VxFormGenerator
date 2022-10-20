@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using VxFormGenerator.Components.Plain;
 #if BOOTSTRAP
  using VxFormGenerator.Settings.Bootstrap;
 #else
-using VxFormGenerator.Settings.Plain;
 #endif
 
 namespace VxFormGeneratorDemo.Wasm

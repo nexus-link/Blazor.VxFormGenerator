@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Form
+namespace VxFormGenerator.Components.Plain.Render
 {
     public class FormElementComponent<TFormElement> : FormElementBase<TFormElement>
     {

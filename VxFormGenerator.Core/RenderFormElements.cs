@@ -10,7 +10,6 @@ using System.Reflection;
 using System.Text;
 using VxFormGenerator.Core.Layout;
 using VxFormGenerator.Core.Render;
-using VxFormGenerator.Settings;
 
 namespace VxFormGenerator.Core
 {

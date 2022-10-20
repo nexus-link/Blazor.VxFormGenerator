@@ -1,15 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Rendering;
+using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core;
-using VxFormGenerator.Models;
 
-namespace VxFormGenerator.Form.Components.Plain
+namespace VxFormGenerator.Components.Plain.Components
 {
     public class InputColor: VxInputBase<VxColor>
     {

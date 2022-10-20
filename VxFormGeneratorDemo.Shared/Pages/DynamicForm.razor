@@ -2,6 +2,7 @@
 
 @using VxFormGenerator.Core
 @using System.Dynamic
+@using VxFormGenerator.Components.Plain.Models
 
 <h1>Dynamic Based Form Demo</h1>
 
@@ -35,7 +36,7 @@
         dict.Add("Note", "This is a note");
         dict.Add("Date", DateTime.Now);
         dict.Add("Amount", 1);
-        dict.Add("Color", new VxFormGenerator.Models.VxColor("#fff"));
+        dict.Add("Color", new VxColor("#fff"));
 
     }
 

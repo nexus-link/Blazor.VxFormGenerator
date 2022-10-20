@@ -1,15 +1,13 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using VxFormGenerator.Form.Components.Bootstrap;
-using VxFormGenerator.Models;
-using VxFormGenerator.Core.Repository;
+using Microsoft.AspNetCore.Components.Forms;
+using VxFormGenerator.Components.Bootstrap.Components;
+using VxFormGenerator.Components.Plain.Components;
+using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core;
-using VxFormGenerator.Form.Components.Plain;
+using VxFormGenerator.Core.Repository;
 
-
-
-namespace VxFormGenerator.Repository.Bootstrap
+namespace VxFormGenerator.Components.Bootstrap
 {
     public class VxBootstrapRepository : FormGeneratorComponentModelBasedRepository
     {

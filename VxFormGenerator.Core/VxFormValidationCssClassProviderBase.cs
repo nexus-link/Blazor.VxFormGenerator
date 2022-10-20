@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using Microsoft.AspNetCore.Components.Forms;
 using VxFormGenerator.Core.Layout;
 
-namespace VxFormGenerator.Settings
+namespace VxFormGenerator.Core
 {
     public abstract class VxFormCssClassProviderBase : FieldCssClassProvider
     {

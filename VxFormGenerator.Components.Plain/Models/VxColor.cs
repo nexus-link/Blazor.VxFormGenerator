@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using VxFormGenerator.Utils;
+﻿using System.ComponentModel;
+using VxFormGenerator.Components.Plain.Utils;
 
-namespace VxFormGenerator.Models
+namespace VxFormGenerator.Components.Plain.Models
 {
     [TypeConverter(typeof(StringToVxColorConverter))]
     public class VxColor

@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
+﻿using System;
+using Microsoft.AspNetCore.Components.Forms;
+using VxFormGenerator.Components.Bootstrap.Render;
+using VxFormGenerator.Components.Plain.Render;
 using VxFormGenerator.Core;
-using VxFormGenerator.Form;
-using VxFormGenerator.Render.Bootstrap;
-using VxFormGenerator.Render.Plain;
 
-namespace VxFormGenerator.Settings.Bootstrap
+namespace VxFormGenerator.Components.Bootstrap
 {
     public class VxBootstrapFormOptions : IFormGeneratorOptions
     {

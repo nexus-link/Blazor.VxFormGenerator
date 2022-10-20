@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core.Layout;
 using VxFormGenerator.Core.Validation;
-using VxFormGenerator.Models;
 
 
 namespace VxFormGeneratorDemoData

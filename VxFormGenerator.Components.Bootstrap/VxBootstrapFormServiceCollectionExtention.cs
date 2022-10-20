@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using VxFormGenerator.Repository.Bootstrap;
+using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Settings.Bootstrap
+namespace VxFormGenerator.Components.Bootstrap
 {
     public static class ServiceCollectionExtensions
     {

@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using VxFormGenerator.Core;
 using VxFormGenerator.Core.Layout;
 
-namespace VxFormGenerator.Render.Plain
+namespace VxFormGenerator.Components.Plain.Render
 {
     public class VxFormRowComponent : OwningComponentBase
     {

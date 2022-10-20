@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Components.Forms;
-using System;
+﻿using System;
+using Microsoft.AspNetCore.Components.Forms;
+using VxFormGenerator.Components.Plain.Render;
 using VxFormGenerator.Core;
-using VxFormGenerator.Form;
-using VxFormGenerator.Render.Plain;
 
-namespace VxFormGenerator.Settings.Plain
+namespace VxFormGenerator.Components.Plain
 {
     public class VxFormOptions : IFormGeneratorOptions
     {

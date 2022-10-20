@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Components;
 using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Form.Components.Plain
+namespace VxFormGenerator.Components.Plain.Components
 {
     public class InputCheckboxMultipleComponent<T> : VxInputBase<T>
     {

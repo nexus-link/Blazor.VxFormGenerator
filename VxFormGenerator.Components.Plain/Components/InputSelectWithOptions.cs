@@ -1,12 +1,11 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Rendering;
-using System;
-using System.Collections.Generic;
 using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Form.Components.Plain
+namespace VxFormGenerator.Components.Plain.Components
 {
     public class InputSelectWithOptions<TValue> : InputSelect<TValue>, IRenderChildren
     {

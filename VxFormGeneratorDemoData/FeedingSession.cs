@@ -1,8 +1,8 @@
 ﻿
 using System;
 using System.ComponentModel.DataAnnotations;
+using VxFormGenerator.Components.Plain.Models;
 using VxFormGenerator.Core;
-using VxFormGenerator.Models;
 
 namespace VxFormGeneratorDemoData
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace VxFormGenerator.Settings
+namespace VxFormGenerator.Core
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class VxFormCssClassAttribute: Attribute

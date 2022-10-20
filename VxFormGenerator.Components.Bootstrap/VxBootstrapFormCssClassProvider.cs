@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Forms;
+using VxFormGenerator.Core;
 
-namespace VxFormGenerator.Settings.Bootstrap
+namespace VxFormGenerator.Components.Bootstrap
 {
     public class VxBootstrapFormCssClassProvider : VxFormCssClassProviderBase
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace VxFormGenerator.Core
+namespace VxFormGenerator.Core.Attributes
 {
     public class VxIgnoreAttribute : Attribute { }
 }
