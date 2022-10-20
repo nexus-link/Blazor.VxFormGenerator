@@ -34,7 +34,7 @@
                   OnValidSubmit="HandleValidSubmit"
                   OnInvalidSubmit="HandleInValidSubmit">
             <VxFormGenerator.Core.Validation.ObjectGraphDataAnnotationsValidator />
-            <RenderFormElements FormLayoutOptions="@OptionsForForm"></RenderFormElements>
+            <RenderFormElements FormLayoutOptions="@_optionsForForm"></RenderFormElements>
             <button class="btn btn-primary" type="submit">Submit</button>
         </EditForm>
     </div>
@@ -47,15 +47,15 @@
     /// <summary>
     /// Model that is used for the form
     /// </summary>
-    private object Model = new FeedingSession();
-    private VxFormLayoutOptionsAnnotated Options = new VxFormLayoutOptionsAnnotated();
-    private VxFormLayoutOptions OptionsForForm = new VxFormLayoutOptions();
+    private object _model = new FeedingSession();
+    private readonly VxFormLayoutOptionsAnnotated _options = new VxFormLayoutOptionsAnnotated();
+    private VxFormLayoutOptions _optionsForForm = new VxFormLayoutOptions();
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
 
-        ChangeLayoutOptions(new EditContext(Options));
+        ChangeLayoutOptions(new EditContext(_options));
     }
 
     /// <summary>
@@ -76,18 +76,18 @@
     private void ChangeLayoutOptions(EditContext context)
     {
         var options = ((VxFormLayoutOptionsAnnotated)context.Model);
-        OptionsForForm = options.ToFormLayoutOptions();
+        _optionsForForm = options.ToFormLayoutOptions();
 
         switch (options.FormRenderKind)
         {
             case TypeOfForm.SIMPLE:
-                Model = new FeedingSession();
+                _model = new FeedingSession();
                 break;
             case TypeOfForm.ADVANCED:
-                Model = new AddressViewModel();
+                _model = new AddressViewModel();
                 break;
             case TypeOfForm.COMPLEX:
-                Model = new OrderViewModel();
+                _model = new OrderViewModel();
                 break;
         }
 

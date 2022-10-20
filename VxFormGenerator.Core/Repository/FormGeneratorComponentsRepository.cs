@@ -6,9 +6,9 @@ namespace VxFormGenerator.Core.Repository
 
     public class FormGeneratorComponentsRepository<TKey> : IFormGeneratorComponentsRepository
     {
-        protected Dictionary<TKey, Type> _ComponentDict = new Dictionary<TKey, Type>();
+        protected Dictionary<TKey, Type> ComponentDict = new Dictionary<TKey, Type>();
 
-        public Type _DefaultComponent { get; protected set; }
+        public Type DefaultComponent { get; protected set; }
 
         public FormGeneratorComponentsRepository()
         {
@@ -17,35 +17,35 @@ namespace VxFormGenerator.Core.Repository
 
         public FormGeneratorComponentsRepository(Dictionary<TKey, Type> componentRegistrations)
         {
-            _ComponentDict = componentRegistrations;
+            ComponentDict = componentRegistrations;
         }
         public FormGeneratorComponentsRepository(Dictionary<TKey, Type> componentRegistrations, Type defaultComponent)
         {
-            _ComponentDict = componentRegistrations;
-            _DefaultComponent = defaultComponent;
+            ComponentDict = componentRegistrations;
+            DefaultComponent = defaultComponent;
         }
 
 
         protected void RegisterComponent(TKey key, Type component)
         {
-            _ComponentDict.Add(key, component);
+            ComponentDict.Add(key, component);
         }
 
         protected void RemoveComponent(TKey key)
         {
-            _ComponentDict.Remove(key);
+            ComponentDict.Remove(key);
         }
 
         protected virtual Type GetComponent(TKey key)
         {
-            var found = _ComponentDict.TryGetValue(key, out Type outVar);
+            var found = ComponentDict.TryGetValue(key, out Type outVar);
 
-            return found ? outVar : _DefaultComponent;
+            return found ? outVar : DefaultComponent;
         }
 
         public void Clear()
         {
-            _ComponentDict.Clear();
+            ComponentDict.Clear();
         }
 
         public void RegisterComponent(object key, Type component)

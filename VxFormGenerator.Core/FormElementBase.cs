@@ -165,10 +165,10 @@ namespace VxFormGenerator.Core
             if (instance == null)
                 return output;
 
-            var AdditionalAttributes = instance.AdditionalAttributes;
+            var additionalAttributes = instance.AdditionalAttributes;
 
-            if (AdditionalAttributes != null &&
-                  AdditionalAttributes.TryGetValue("class", out var @class) &&
+            if (additionalAttributes != null &&
+                  additionalAttributes.TryGetValue("class", out var @class) &&
                   !string.IsNullOrEmpty(Convert.ToString(@class)))
             {
                 return $"{@class} {output}";

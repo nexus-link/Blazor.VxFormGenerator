@@ -16,7 +16,7 @@ namespace VxFormGenerator.Components.Plain.Components
                 builder.AddMultipleAttributes(1, AdditionalAttributes);
                 builder.AddAttribute(2, "type", "color");
                 builder.AddAttribute(3, "class", CssClass);
-                builder.AddAttribute(5, "onchange", EventCallback.Factory.CreateBinder<VxColor>(this, __value => CurrentValue = __value, CurrentValue));
+                builder.AddAttribute(5, "onchange", EventCallback.Factory.CreateBinder<VxColor>(this, value => CurrentValue = value, CurrentValue));
                 builder.CloseElement();
             }
 

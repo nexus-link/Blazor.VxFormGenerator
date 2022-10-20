@@ -11,14 +11,14 @@ namespace VxFormGenerator.Components.Plain.Components
     {
         public static Type TypeOfChildToRender => typeof(InputSelectOption<string>);
 
-        public static void RenderChildren(RenderTreeBuilder builder, int index, object dataContext,
+        public static void RenderChildren(RenderTreeBuilder builder1, int index, object dataContext,
             string fieldIdentifier)
         {
             // the builder position is between the builder.OpenComponent() and builder.CloseComponent()
             // This means that the component of InputSelect is added en stil open for changes.
             // We can create a new RenderFragment and set the ChildContent attribute of the InputSelect component
-            builder.AddAttribute(index + 1, nameof(ChildContent),
-                new RenderFragment(_builder =>
+            builder1.AddAttribute(index + 1, nameof(ChildContent),
+                new RenderFragment(builder =>
                 {
                     // check if the type of the propery is an Enum
                     if (typeof(TValue).IsEnum)
@@ -33,14 +33,14 @@ namespace VxFormGenerator.Components.Plain.Components
                             var value = VxSelectItem.ToSelectItem(val as Enum);
 
                             //  Open the InputSelectOption component
-                            _builder.OpenComponent(0, TypeOfChildToRender);
+                            builder.OpenComponent(0, TypeOfChildToRender);
 
                             // Set the value of the enum as a value and key parameter
-                            _builder.AddAttribute(1, nameof(InputSelectOption<string>.Value), value.Label);
-                            _builder.AddAttribute(2, nameof(InputSelectOption<string>.Key), value.Key);
+                            builder.AddAttribute(1, nameof(InputSelectOption<string>.Value), value.Label);
+                            builder.AddAttribute(2, nameof(InputSelectOption<string>.Key), value.Key);
 
                             // Close the component
-                            _builder.CloseComponent();
+                            builder.CloseComponent();
                         }
                     }
 

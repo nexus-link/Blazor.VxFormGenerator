@@ -17,11 +17,11 @@ namespace VxFormGenerator.Core.Validation
         public abstract string InValidClass { get; set; }
 
         private FieldIdentifier _fieldIdentifier;
-        private string @class;
+        private string _class;
 
         [CascadingParameter] private EditContext EditContext { get; set; }
         [Parameter] public Expression<Func<TValue>> For { get; set; }
-        [Parameter] public string Class { get => @class + " " + ValidationClass; set => @class = value; }
+        [Parameter] public string Class { get => _class + " " + ValidationClass; set => _class = value; }
 
         protected IEnumerable<string> ValidationMessages => EditContext.GetValidationMessages(_fieldIdentifier);
 

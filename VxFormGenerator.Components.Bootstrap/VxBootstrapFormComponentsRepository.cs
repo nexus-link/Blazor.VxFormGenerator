@@ -14,7 +14,7 @@ namespace VxFormGenerator.Components.Bootstrap
         public VxBootstrapRepository()
         {
 
-            _ComponentDict = new Dictionary<Type, Type>()
+            ComponentDict = new Dictionary<Type, Type>()
                   {
                     { typeof(string),          typeof(InputText) },
                     { typeof(DateTime),        typeof(InputDate<>) },
@@ -27,7 +27,7 @@ namespace VxFormGenerator.Components.Bootstrap
                     { typeof(VxColor),         typeof(InputColor) }
                   };
 
-            _DefaultComponent = null;
+            DefaultComponent = null;
 
         }
 

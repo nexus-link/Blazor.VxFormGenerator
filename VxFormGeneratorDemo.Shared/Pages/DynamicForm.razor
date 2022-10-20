@@ -26,12 +26,12 @@
     /// <summary>
     /// Model that is used for the form
     /// </summary>
-    private dynamic Model = new ExpandoObject();
+    private readonly dynamic _model = new ExpandoObject();
 
 
     protected override void OnInitialized()
     {
-        var dict = (IDictionary<String, Object>)Model;
+        var dict = (IDictionary<String, Object>)_model;
         dict.Add("Name", "add");
         dict.Add("Note", "This is a note");
         dict.Add("Date", DateTime.Now);

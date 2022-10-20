@@ -10,22 +10,22 @@ namespace VxFormGenerator.Components.Plain.Components
     public class InputCheckboxMultipleWithChildren<TValue> : InputCheckboxMultiple<TValue>, IRenderChildrenSwapable
     {
 
-        public static void RenderChildren(RenderTreeBuilder builder,
-            int index,
+        public static void RenderChildren(RenderTreeBuilder builder1,
+            int index1,
             object dataContext,
             string fieldIdentifier)
         {
-            RenderChildren(builder, index, dataContext, fieldIdentifier, typeof(VxInputCheckbox));
+            RenderChildren(builder1, index1, dataContext, fieldIdentifier, typeof(VxInputCheckbox));
         }
 
-        protected static void RenderChildren(RenderTreeBuilder builder,
-            int index,
+        protected static void RenderChildren(RenderTreeBuilder builder1,
+            int index1,
             object dataContext,
             string fieldIdentifier,
             Type typeOfChildToRender)
         {
-            builder.AddAttribute(index++, nameof(ChildContent),
-               new RenderFragment(_builder =>
+            builder1.AddAttribute(index1++, nameof(ChildContent),
+               new RenderFragment(builder =>
                {
 
                    // when type is a enum present them as an <option> element 
@@ -33,31 +33,31 @@ namespace VxFormGenerator.Components.Plain.Components
                    var values = FormElementReference<ValueReferences>.GetValue(dataContext, fieldIdentifier);
                    foreach (var val in values)
                    {
-                       var _index = 0;
+                       var index = 0;
 
                        //  Open the InputSelectOption component
-                       _builder.OpenComponent(_index++, typeOfChildToRender);
+                       builder.OpenComponent(index++, typeOfChildToRender);
 
                        // Set the value of the enum as a value and key parameter
-                       _builder.AddAttribute(_index++, nameof(VxInputCheckbox.Value), val.Value);
+                       builder.AddAttribute(index++, nameof(VxInputCheckbox.Value), val.Value);
 
                        // Create the handler for ValueChanged. This wil update the model instance with the input
-                       _builder.AddAttribute(_index++, nameof(ValueChanged),
+                       builder.AddAttribute(index++, nameof(ValueChanged),
                               Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
                                   EventCallback.Factory.Create<bool>(
                                       dataContext, EventCallback.Factory.
-                                      CreateInferred(val.Value, __value => val.Value = __value, val.Value))));
+                                      CreateInferred(val.Value, value => val.Value = value, val.Value))));
 
                        // Create an expression to set the ValueExpression-attribute.
                        var constant = Expression.Constant(val, val.GetType());
                        var exp = Expression.Property(constant, nameof(ValueReference<string, bool>.Value));
                        var lamb = Expression.Lambda<Func<bool>>(exp);
-                       _builder.AddAttribute(_index++, nameof(InputBase<bool>.ValueExpression), lamb);
+                       builder.AddAttribute(index++, nameof(InputBase<bool>.ValueExpression), lamb);
 
-                       _builder.AddAttribute(_index++, nameof(VxInputCheckbox.Label), val.Key);
+                       builder.AddAttribute(index++, nameof(VxInputCheckbox.Label), val.Key);
 
                        // Close the component
-                       _builder.CloseComponent();
+                       builder.CloseComponent();
                    }
 
 

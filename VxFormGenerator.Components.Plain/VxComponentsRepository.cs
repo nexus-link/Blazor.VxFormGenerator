@@ -13,7 +13,7 @@ namespace VxFormGenerator.Components.Plain
         public VxComponentsRepository()
         {
 
-            _ComponentDict = new Dictionary<Type, Type>()
+            ComponentDict = new Dictionary<Type, Type>()
                   {
                         {typeof(string),            typeof(VxInputText) },
                         {typeof(DateTime),          typeof(InputDate<>) },
@@ -25,7 +25,7 @@ namespace VxFormGenerator.Components.Plain
                         { typeof(System.Single),    typeof(InputNumber<>) },
                         {typeof(VxColor),           typeof(InputColor) }
                   };
-            _DefaultComponent = null;
+            DefaultComponent = null;
 
 
         }

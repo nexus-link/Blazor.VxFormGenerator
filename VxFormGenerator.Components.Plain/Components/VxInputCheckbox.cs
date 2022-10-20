@@ -27,7 +27,7 @@ namespace VxFormGenerator.Components.Plain.Components
                 builder.AddAttribute(index2++, "class", CssClass);
                 builder.AddAttribute(index2++, "id", Id);
                 builder.AddAttribute(index2++, "checked", BindConverter.FormatValue(CurrentValue));
-                builder.AddAttribute(index2++, "onchange", EventCallback.Factory.CreateBinder<bool>(this, __value => CurrentValue = __value, CurrentValue));
+                builder.AddAttribute(index2++, "onchange", EventCallback.Factory.CreateBinder<bool>(this, value => CurrentValue = value, CurrentValue));
                 builder.CloseElement();
 
                 builder.OpenElement(index2++, "label");

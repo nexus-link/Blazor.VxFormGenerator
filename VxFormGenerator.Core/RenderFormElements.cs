@@ -29,29 +29,29 @@ namespace VxFormGenerator.Core
         /// Override the default render method, determining if the <see cref="EditContext.Model"/> 
         /// is a regular class or a dynamic <see cref="ExpandoObject"/>
         /// </summary>
-        /// <param name="builder">Instance of the page builder</param>
-        protected override void BuildRenderTree(RenderTreeBuilder builder)
+        /// <param name="builder1">Instance of the page builder</param>
+        protected override void BuildRenderTree(RenderTreeBuilder builder1)
         {
-            base.BuildRenderTree(builder);
+            base.BuildRenderTree(builder1);
 
             var formDefinition = VxFormDefinition.CreateFromModel(CascadedEditContext.Model, FormLayoutOptions);
 
-            builder.OpenComponent(0, typeof(CascadingValue<VxFormLayoutOptions>));
-            builder.AddAttribute(1, nameof(CascadingValue<VxFormLayoutOptions>.Value), FormLayoutOptions);
-            builder.AddAttribute(2, nameof(CascadingValue<VxFormLayoutOptions>.ChildContent), new RenderFragment(_builder =>
+            builder1.OpenComponent(0, typeof(CascadingValue<VxFormLayoutOptions>));
+            builder1.AddAttribute(1, nameof(CascadingValue<VxFormLayoutOptions>.Value), FormLayoutOptions);
+            builder1.AddAttribute(2, nameof(CascadingValue<VxFormLayoutOptions>.ChildContent), new RenderFragment(builder =>
             {
                 var counter = 2;
 
                 foreach (var group in formDefinition.Groups)
                 {
-                    _builder.OpenComponent(counter++, FormGeneratorOptions.FormGroupElement);
-                    _builder.AddAttribute(counter++, nameof(VxFormGroupBase.FormGroupDefinition), group);
-                    _builder.CloseComponent();
+                    builder.OpenComponent(counter++, FormGeneratorOptions.FormGroupElement);
+                    builder.AddAttribute(counter++, nameof(VxFormGroupBase.FormGroupDefinition), group);
+                    builder.CloseComponent();
                 }
 
             }));
 
-            builder.CloseComponent();
+            builder1.CloseComponent();
 
         }
 

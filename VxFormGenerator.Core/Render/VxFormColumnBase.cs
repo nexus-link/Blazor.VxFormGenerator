@@ -81,7 +81,7 @@ namespace VxFormGenerator.Core.Render
             var valueChanged = Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
                         EventCallback.Factory.Create<TValue>(
                             this, EventCallback.Factory.
-                            CreateInferred(this, __value => propertyInfo.SetValue(model, __value),
+                            CreateInferred(this, value => propertyInfo.SetValue(model, value),
 
                             (TValue)propertyInfo.GetValue(model))));
             // Create an expression to set the ValueExpression-attribute.
@@ -119,18 +119,18 @@ namespace VxFormGenerator.Core.Render
             // cast the model to a dictionary so it's accessable
             var accessor = ((IDictionary<string, object>)model);
 
-            object value = default(TValue);
-            accessor.TryGetValue(key, out value);
+            object value1 = default(TValue);
+            accessor.TryGetValue(key, out value1);
 
             var valueChanged = Microsoft.AspNetCore.Components.CompilerServices.RuntimeHelpers.TypeCheck(
                         EventCallback.Factory.Create<TValue>(
                             this, EventCallback.Factory.
-                            CreateInferred(this, __value => accessor[key] = __value,
+                            CreateInferred(this, value => accessor[key] = value,
                             (TValue)accessor[key])));
 
             var formElementReference = new FormElementReference<TValue>()
             {
-                Value = (TValue)value,
+                Value = (TValue)value1,
                 ValueChanged = valueChanged,
                 FormColumnDefinition = formColumnDefinition
             };
